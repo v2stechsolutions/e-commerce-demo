@@ -1,0 +1,1 @@
+export const SET_CART_DATA = "set_cart_data"
