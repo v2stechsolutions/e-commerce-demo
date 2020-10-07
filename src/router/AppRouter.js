@@ -16,6 +16,7 @@ function AppRouter() {
             <Header />
             <Switch>
                 <Route exact path="/" component={Home} />
+                <Route exact path="/home" component={Home} />
                 <Route exact path="/product-page" component={ProductPage} />
                 <Route exact path="/empty-checkout" component={EmptyCheckout} />
                 <Route exact path="/shopping-cart" component={ShoppingCart} />
