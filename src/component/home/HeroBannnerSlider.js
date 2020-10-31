@@ -16,17 +16,17 @@ function HeroBannnerSlider() {
         autoplaySpeed: 3000
     };
     return (
-        <div className="hero_banner_section">
+        <div className="hero_banner_section" style={style.heroBannerSection}>
             <Container>
                 <Row>
-                    <Col md={12} className="full_width">
+                    <Col md={12} className="full_width" style={style.fullWidth}>
                         <Slider {...settings}>
                             {
                                 bannerData.map((banner, i) => {
                                     return (
-                                        <div className="content" key={"banner" + i}>
-                                            <div className="top_center">
-                                                <h1>{banner.heading}</h1>
+                                        <div className="content" key={"banner" + i} style={style.content}>
+                                            <div className="top_center" style={style.topCenter}>
+                                                <h1 style={style.bannerHeading}>{banner.heading}</h1>
                                                 <ul>
                                                     <li><Link to={banner.path} className="hvr-shutter-out-horizontal">{banner.linkText}</Link></li>
                                                 </ul>
@@ -42,6 +42,30 @@ function HeroBannnerSlider() {
             </Container>
         </div>
     )
+}
+const style={
+    heroBannerSection:{
+        backgroundColor: "#030303",
+        marginTop: "-106px",
+    },
+    fullWidth:{
+        position: "relative"
+    },
+    content:{
+        padding: "190px 0",
+        position: "relative",
+    },
+    topCenter:{
+        maxWidth: "540px",
+        position: "relative",
+        zIndex: 9,
+    },
+    bannerHeading:{
+        fontSize: "78px",
+        lineHeight: "88px",
+        color: "#ffffff",
+        marginBottom: "35px",
+    }
 }
 
 export default HeroBannnerSlider
