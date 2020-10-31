@@ -10,6 +10,7 @@ import { Col, Container, Row } from 'react-bootstrap'
 import { connect } from "react-redux";
 import { setCartData } from '../../actions'
 import { getUpdatedCartData } from './functions/getUpdatedCartData'
+import { Link } from 'react-router-dom'
 
 class ProductDetails extends React.Component {
     constructor(props) {
@@ -117,7 +118,10 @@ class ProductDetails extends React.Component {
                                             className="hvr-shutter-out-horizontal add_cart"
                                             onClick={this.handleAddToCartClick}
                                         ><ShoppingCartIcon /> Add to cart</a>
-                                        <a href="/shopping-cart" className="hvr-shutter-out-horizontal"><DownloadNow /> Buy now</a>
+                                        <Link to="/shopping-cart" className="hvr-shutter-out-horizontal">
+                                        <DownloadNow /> Buy now
+                                        </Link>
+                                        {/* <a href="/shopping-cart" className="hvr-shutter-out-horizontal"><DownloadNow /> Buy now</a> */}
                                     </div>
                                 </div>
                             </div>
