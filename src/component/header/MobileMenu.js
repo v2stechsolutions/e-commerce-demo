@@ -31,7 +31,7 @@ class MobileMenu extends React.Component {
                             <Link className="nav-link" to="/contact">Contact</Link>
                             <div className="contact_num">
                                 <PhoneInTalkIcon />
-                                <a href='tel:18008626772'>1 (800) 862   6772 </a>
+                                <Link to='tel:18008626772'>1 (800) 862   6772 </Link>
                             </div>
                         </Nav>
                     </Navbar.Collapse>

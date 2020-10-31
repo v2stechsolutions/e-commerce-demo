@@ -91,7 +91,7 @@ class Header extends React.Component {
                                         </ul>
                                         <div className="contact_num">
                                             <PhoneInTalkIcon />
-                                            <a href='tel:18008626772'>1 (800) 862   6772 </a>
+                                            <Link to='tel:18008626772'>1 (800) 862   6772 </Link>
                                         </div>
                                     </div>
                                     <MobileMenu />

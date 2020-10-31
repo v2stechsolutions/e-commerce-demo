@@ -16,9 +16,9 @@ function Footer() {
                     <Col md={4} className="mb_10">
                         <h4>Menu</h4>
                         <ul className="menu_footer clearfix">
-                            <li><a href="/shop-list">Shop </a></li>
-                            <li><a href="/product-page">Product</a></li>
-                            <li><a href="/contact">Contact Us</a></li>
+                            <li><Link to="/shop-list">Shop </Link></li>
+                            <li><Link to="/product-page">Product</Link></li>
+                            <li><Link to="/contact">Contact Us</Link></li>
                         </ul>
                     </Col>
                     <Col md={4} className="from_section">

@@ -75,9 +75,9 @@ class EmptyCheckout extends React.Component {
                                             <input type="password" required />
                                         </div>
                                         <h6>Allready have an account? <Link to="/e-commerce-demo">Sign in Now!</Link></h6>
-                                        <a href="/e-commerce-demo">
+                                        <Link to="/e-commerce-demo">
                                             <input value="Register Now" className="submit" />
-                                        </a>
+                                        </Link>
                                     </form>
                                 </div>
                             </Col>
@@ -103,9 +103,9 @@ class EmptyCheckout extends React.Component {
                                                 <span>Keep me Signed</span>
                                             </InputGroup.Prepend>
                                         </div>
-                                        <a href="/e-commerce-demo">
+                                        <Link to="/e-commerce-demo">
                                             <input value="Sign in" className="submit" />
-                                        </a>
+                                        </Link>
                                     </form>
                                     <div className="or text-center">
                                         <h6><span>or</span></h6>

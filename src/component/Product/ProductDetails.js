@@ -114,10 +114,10 @@ class ProductDetails extends React.Component {
                                         <button onClick={this.IncrementItem}>+</button>
                                     </div>
                                     <div className="button_add_card">
-                                        <a href="#/"
+                                        <Link to="#/"
                                             className="hvr-shutter-out-horizontal add_cart"
                                             onClick={this.handleAddToCartClick}
-                                        ><ShoppingCartIcon /> Add to cart</a>
+                                        ><ShoppingCartIcon /> Add to cart</Link>
                                         <Link to="/shopping-cart" className="hvr-shutter-out-horizontal">
                                         <DownloadNow /> Buy now
                                         </Link>

@@ -3,7 +3,7 @@ import Modal from 'react-bootstrap/Modal'
 import Tabs from 'react-bootstrap/Tabs'
 import Tab from 'react-bootstrap/Tab'
 import PersonOutlineIcon from '@material-ui/icons/PersonOutline'
-
+import { Link } from "react-router-dom"
 
 class UserAdmin extends React.Component {
     constructor(props) {
@@ -63,9 +63,9 @@ class UserAdmin extends React.Component {
                                             </label>
                                             <input type="password" required autocomplete="off" />
                                         </div>
-                                        <a href="/e-commerce-demo">
+                                        <Link to="/e-commerce-demo">
                                             <button className="button button-block" type="button">Sign Up</button>
-                                        </a>
+                                        </Link>
                                     </form>
                                 </div>
                             </Tab>
@@ -85,10 +85,10 @@ class UserAdmin extends React.Component {
                                             </label>
                                             <input type="password" required autocomplete="off" />
                                         </div>
-                                        <p class="forgot"><a href="/e-commerce-demo">Forgot Password?</a></p>
-                                        <a href="/e-commerce-demo">
+                                        <p class="forgot"><Link to="/e-commerce-demo">Forgot Password?</Link></p>
+                                        <Link to="/e-commerce-demo">
                                             <button class="button button-block" type="button">Log In</button>
-                                        </a>
+                                        </Link>
                                     </form>
                                 </div>
                             </Tab>
