@@ -63,7 +63,7 @@ class UserAdmin extends React.Component {
                                             </label>
                                             <input type="password" required autocomplete="off" />
                                         </div>
-                                        <a href="/">
+                                        <a href="/e-commerce-demo">
                                             <button className="button button-block" type="button">Sign Up</button>
                                         </a>
                                     </form>
@@ -85,8 +85,8 @@ class UserAdmin extends React.Component {
                                             </label>
                                             <input type="password" required autocomplete="off" />
                                         </div>
-                                        <p class="forgot"><a href="/">Forgot Password?</a></p>
-                                        <a href="/">
+                                        <p class="forgot"><a href="/e-commerce-demo">Forgot Password?</a></p>
+                                        <a href="/e-commerce-demo">
                                             <button class="button button-block" type="button">Log In</button>
                                         </a>
                                     </form>

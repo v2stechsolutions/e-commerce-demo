@@ -60,7 +60,7 @@ function ContactUs() {
                                     </li>
                                 </ul>
                                 <div className="text-right">
-                                    <a className="hvr-shutter-out-horizontal" id="submit" href="/">Submit</a>
+                                    <a className="hvr-shutter-out-horizontal" id="submit" href="/e-commerce-demo">Submit</a>
                                 </div>
                             </div>
                         </Col>

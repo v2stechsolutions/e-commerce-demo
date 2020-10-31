@@ -136,7 +136,7 @@ class Checkout extends React.Component {
                                         <li>$1950.00</li>
                                     </ul>
                                     <ul className="checkout">
-                                        <li><Link to="/">Checkout</Link></li>
+                                        <li><Link to="/e-commerce-demo">Checkout</Link></li>
                                     </ul>
                                     <div className="or text-center">
                                         <h6><span>or</span></h6>

@@ -65,11 +65,11 @@ class Header extends React.Component {
                         <Row>
                             <Col md={12}>
                                 <nav className="navbar navbar-expand-lg">
-                                    <Link className="navbar-brand" to="/"><img src={logo} alt="logo" /></Link>
+                                    <Link className="navbar-brand" to="/e-commerce-demo"><img src={logo} alt="logo" /></Link>
                                     <div className="center_menu collapse navbar-collapse justify-content-between" id="navbarSupportedContent">
                                         <ul className="navbar-nav" id="listItem">
                                             <li className="nav-item active">
-                                                <Link className="nav-link" to="/">Watches</Link>
+                                                <Link className="nav-link" to="/e-commerce-demo">Watches</Link>
                                             </li>
                                             <li className="nav-item">
                                                 <Link className="nav-link" to="#/">Pages</Link>

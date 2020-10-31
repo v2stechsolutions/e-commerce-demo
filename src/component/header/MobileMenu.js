@@ -14,7 +14,7 @@ class MobileMenu extends React.Component {
                     <Navbar.Toggle aria-controls="responsive-navbar-nav" />
                     <Navbar.Collapse id="responsive-navbar-nav">
                         <Nav className="mr-auto">
-                            <Link className="nav-link" to="/">Watches</Link>
+                            <Link className="nav-link" to="/e-commerce-demo">Watches</Link>
                             <NavDropdown title="Pages" id="collasible-nav-dropdown">
                                 <ul className="dropdown_menu">
                                     {

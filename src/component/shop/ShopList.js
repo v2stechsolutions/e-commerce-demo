@@ -1,7 +1,5 @@
 import React from "react"
 import MetaTags from 'react-meta-tags';
-import { Link } from "react-router-dom"
-import ShoppingCartIcon from '@material-ui/icons/ShoppingCart'
 // import ExpandMoreIcon from '@material-ui/icons/ExpandMore';
 import ShopBackground from "../../images/shop/shop-background.webp"
 import collectionWatch4 from "../../images/home/collection-watch-4.png"
@@ -10,10 +8,12 @@ import collectionWatch6 from "../../images/home/collection-watch-6.png"
 import { Col, Container, Row } from "react-bootstrap";
 import Filters from "./Filters";
 import { filters } from "../../data/filtersData";
-
+import CustomCard from "../commonComponent/watch/CustomCard";
+import _ from 'lodash';
 
 class ShopList extends React.Component {
     render() {
+        let shoppingList=[collectionWatch4,collectionWatch5,collectionWatch6,collectionWatch5,collectionWatch4,collectionWatch6]
         return (
             <div className="shop_list">
                 <MetaTags>
@@ -43,54 +43,15 @@ class ShopList extends React.Component {
                                 <div className="content">
                                     <h2>Showing 9 of 45 Products</h2>
                                     <div className="card_list clearfix">
-                                        <div className="box text-center">
-                                            <div className="pad">
-                                                <Link href="/" to="/"><img src={collectionWatch4} alt="Adriatica ADR" /></Link>
-                                                <h5>Adriatica ADR</h5>
-                                                <Link href="/" to="/">$650, 00 </Link>
-                                                <Link to="/shopping-cart" className="shopping_cart"><ShoppingCartIcon /> Add to Cart</Link>
-                                            </div>
-                                        </div>
-                                        <div className="box text-center">
-                                            <div className="pad">
-                                                <Link href="/" to="/"><img src={collectionWatch5} alt="Adriatica ADR" /></Link>
-                                                <h5>Adriatica ADR</h5>
-                                                <a href="/">$650, 00 </a>
-                                                <Link to="/shopping-cart" className="shopping_cart"><ShoppingCartIcon /> Add to Cart</Link>
-                                            </div>
-                                        </div>
-                                        <div className="box text-center">
-                                            <div className="pad">
-                                                <Link href="/" to="/"><img src={collectionWatch6} alt="Adriatica ADR" /></Link>
-                                                <h5>Adriatica ADR</h5>
-                                                <a href="/">$650, 00 </a>
-                                                <Link to="/shopping-cart" className="shopping_cart"><ShoppingCartIcon /> Add to Cart</Link>
-                                            </div>
-                                        </div>
-                                        <div className="box text-center">
-                                            <div className="pad">
-                                                <Link href="/" to="/"><img src={collectionWatch5} alt="Adriatica ADR" /></Link>
-                                                <h5>Adriatica ADR</h5>
-                                                <a href="/">$650, 00 </a>
-                                                <Link to="/shopping-cart" className="shopping_cart"><ShoppingCartIcon /> Add to Cart</Link>
-                                            </div>
-                                        </div>
-                                        <div className="box text-center">
-                                            <div className="pad">
-                                                <Link href="/" to="/"><img src={collectionWatch4} alt="Adriatica ADR" /></Link>
-                                                <h5>Adriatica ADR</h5>
-                                                <Link href="/" to="/">$650, 00 </Link>
-                                                <Link to="/shopping-cart" className="shopping_cart"><ShoppingCartIcon /> Add to Cart</Link>
-                                            </div>
-                                        </div>
-                                        <div className="box text-center">
-                                            <div className="pad">
-                                                <Link href="/" to="/"><img src={collectionWatch6} alt="Adriatica ADR" /></Link>
-                                                <h5>Adriatica ADR</h5>
-                                                <a href="/">$650, 00 </a>
-                                                <Link to="/shopping-cart" className="shopping_cart"><ShoppingCartIcon /> Add to Cart</Link>
-                                            </div>
-                                        </div>
+                                        {_.map(shoppingList, (item) => (
+                                            <CustomCard
+                                                imgPath={item}
+                                                title='Adriatica ADR'
+                                                showCart
+                                                price={650.00}
+                                            />
+                                        ))
+                                        }
                                     </div>
                                 </div>
                             </Col>

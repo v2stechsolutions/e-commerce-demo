@@ -11,7 +11,7 @@ function Footer() {
             <Container>
                 <Row>
                     <Col md={4} className="foter_logo" >
-                        <Link to="/"><img src={FooterLogo} alt="footer logo" /></Link>
+                        <Link to="/e-commerce-demo"><img src={FooterLogo} alt="footer logo" /></Link>
                     </Col>
                     <Col md={4} className="mb_10">
                         <h4>Menu</h4>
@@ -33,8 +33,8 @@ function Footer() {
                     </Col>
                     <Col md={6} className="col-6 text-right">
                         <ul className="social_icon">
-                            <li><Link to="/"><TwitterIcon /></Link></li>
-                            <li><Link to="/"><FacebookIcon /></Link></li>
+                            <li><Link to="/e-commerce-demo"><TwitterIcon /></Link></li>
+                            <li><Link to="/e-commerce-demo"><FacebookIcon /></Link></li>
                         </ul>
                     </Col>
                 </Row>

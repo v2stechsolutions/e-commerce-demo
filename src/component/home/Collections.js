@@ -1,9 +1,10 @@
 import React from 'react'
-import { Link } from "react-router-dom"
+// import { Link } from "react-router-dom"
 import { Tabs, Tab } from 'react-bootstrap-tabs'
 import Slider from "react-slick"
 import { Col, Container, Row } from 'react-bootstrap'
 import { products } from '../../data/products'
+import CustomCard from "../commonComponent/watch/CustomCard";
 
 function Collections() {
 
@@ -49,12 +50,13 @@ function Collections() {
                                                         data-aos-duration="700"
                                                         key={"pl" + i}
                                                     >
-                                                        <div className="box text-center">
-                                                            <img src={p.image} alt={p.title} />
-                                                            <h5>{p.title}</h5>
-                                                            <Link to='/'>${p.price} </Link>
-                                                        </div>
+                                                        <CustomCard
+                                                            imgPath={p.image}
+                                                            title={p.title}
+                                                            price={p.price}
+                                                        />
                                                     </div>
+                                                   
                                                 )
                                             })
                                         }
@@ -71,11 +73,11 @@ function Collections() {
                                                         data-aos-duration="700"
                                                         key={"pp" + i}
                                                     >
-                                                        <div className="box text-center">
-                                                            <img src={p.image} alt={p.title} />
-                                                            <h5>{p.title}</h5>
-                                                            <Link to='/'>${p.price} </Link>
-                                                        </div>
+                                                         <CustomCard
+                                                            imgPath={p.image}
+                                                            title={p.title}
+                                                            price={p.price}
+                                                        />
                                                     </div>
                                                 )
                                             })

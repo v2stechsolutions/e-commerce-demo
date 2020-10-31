@@ -74,8 +74,8 @@ class EmptyCheckout extends React.Component {
                                             <HttpsIcon />
                                             <input type="password" required />
                                         </div>
-                                        <h6>Allready have an account? <Link to="/">Sign in Now!</Link></h6>
-                                        <a href="/">
+                                        <h6>Allready have an account? <Link to="/e-commerce-demo">Sign in Now!</Link></h6>
+                                        <a href="/e-commerce-demo">
                                             <input value="Register Now" className="submit" />
                                         </a>
                                     </form>
@@ -97,21 +97,21 @@ class EmptyCheckout extends React.Component {
                                             <input type="password" required />
                                         </div>
                                         <div className="d-flex justify-content-between fogot__pass">
-                                            <Link to="/">Forgot password?</Link>
+                                            <Link to="/e-commerce-demo">Forgot password?</Link>
                                             <InputGroup.Prepend>
                                                 <InputGroup.Checkbox aria-label="Checkbox for following text input" value="" />
                                                 <span>Keep me Signed</span>
                                             </InputGroup.Prepend>
                                         </div>
-                                        <a href="/">
+                                        <a href="/e-commerce-demo">
                                             <input value="Sign in" className="submit" />
                                         </a>
                                     </form>
                                     <div className="or text-center">
                                         <h6><span>or</span></h6>
                                         <div className="d-flex justify-content-between social_icon">
-                                            <Link to="/" className="left"> Login with facebook</Link>
-                                            <Link to="/" className="right">Login with google</Link>
+                                            <Link to="/e-commerce-demo" className="left"> Login with facebook</Link>
+                                            <Link to="/e-commerce-demo" className="right">Login with google</Link>
                                         </div>
                                     </div>
                                 </div>
