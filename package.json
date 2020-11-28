@@ -24,7 +24,9 @@
     "react-scripts": "^3.4.3",
     "react-slick": "^0.27.8",
     "redux": "^4.0.5",
-    "slick-carousel": "^1.8.1"
+    "simple-react-validator": "^1.6.0",
+    "slick-carousel": "^1.8.1",
+    "use-force-update": "^1.0.7"
   },
   "scripts": {
     "start": "react-scripts start",
