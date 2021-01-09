@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { Link } from "react-router-dom"
 import FooterLogo from '../../images/footer-logo.png'
 import TwitterIcon from '@material-ui/icons/Twitter'
@@ -6,6 +6,7 @@ import FacebookIcon from '@material-ui/icons/Facebook'
 import { Col, Container, Row } from 'react-bootstrap'
 
 function Footer() {
+    const [email, setEmail] = useState('');
     return (
         <div className="footer">
             <Container>
@@ -24,7 +25,13 @@ function Footer() {
                     <Col md={4} className="from_section">
                         <h4>Sign Up For Our Newsletter</h4>
                         <form>
-                            <input type="email" placeholder="Enter email" />
+                            <input
+                                type="email"
+                                placeholder="Enter email"
+                                name="email"
+                                value={email}
+                                onChange={e => setEmail(e.target.value)}
+                            />
                             <input type="submit" className="submit" />
                         </form>
                     </Col>

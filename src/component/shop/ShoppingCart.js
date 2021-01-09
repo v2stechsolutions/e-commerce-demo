@@ -17,7 +17,8 @@ class ShoppingCart extends React.Component {
             cartDetails: {
                 total: 0,
                 cartList: []
-            }
+            },
+            couponCode:"",
         };
     }
     componentDidMount() {
@@ -66,6 +67,7 @@ class ShoppingCart extends React.Component {
 
     render() {
         const { cartList, total } = this.state.cartDetails
+        const { couponCode } = this.state
         return (
             <div className="shopping_cart">
                 <MetaTags>
@@ -153,7 +155,13 @@ class ShoppingCart extends React.Component {
                                     <h3>Have A Promotional Code?</h3>
                                     <div className="coupon">
                                         <form>
-                                            <input type="email" placeholder="Coupon code" />
+                                            <input
+                                                type="email"
+                                                name="couponCode"
+                                                placeholder="Coupon code"
+                                                value={couponCode}
+                                                onChange={(e) => this.setState({ [e.target.name]: e.target.value })}
+                                            />
                                             <input type="submit" className="submit" value="Submit" />
                                         </form>
                                     </div>
