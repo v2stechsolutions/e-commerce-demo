@@ -5,15 +5,20 @@ import Tab from 'react-bootstrap/Tab'
 import PersonOutlineIcon from '@material-ui/icons/PersonOutline'
 import Registration from './Registration'
 import Login from './Login'
-
 class UserAdmin extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
-            showModal: false
+            showModal: false,
+            isLoginIn:false,
         }
         this.close = this.close.bind(this);
         this.open = this.open.bind(this);
+    }
+
+    componentDidMount(){
+        let isLoginIn=window.localStorage.getItem('access_token');
+        this.setState({ isLoginIn: !!isLoginIn })
     }
 
     close() {
@@ -23,12 +28,25 @@ class UserAdmin extends React.Component {
     open() {
         this.setState({ showModal: true });
     }
+
+    HandleLogout = () => {
+        window.localStorage.setItem('access_token', "")
+        this.setState({ isLoginIn: false })
+    }
+    
+    loginSuccess = () => {
+        this.setState({ isLoginIn: true })
+    }
+
     render() {
+        const { isLoginIn } = this.state
         return (
             <>
-                <li onClick={this.open}>
+                {!isLoginIn ? (<li onClick={this.open}>
                     <PersonOutlineIcon />
-                </li>
+                </li>) : <li onClick={() => this.HandleLogout()}>
+                        <p style={{ color: "white" }}>Sign out</p>
+                    </li>}
                 <Modal className="Search_fld logintab" show={this.state.showModal} onHide={this.close} size="lg" aria-labelledby="contained-modal-title-vcenter" centered>
                     <Modal.Header closeButton>
                     </Modal.Header>
@@ -38,7 +56,10 @@ class UserAdmin extends React.Component {
                               <Registration />  
                             </Tab>
                             <Tab eventKey="profile" title="Login">
-                               <Login />
+                                <Login
+                                    closeModal={this.close}
+                                    loginSuccess={this.loginSuccess}
+                                />
                             </Tab>
                         </Tabs>
                     </Modal.Body>

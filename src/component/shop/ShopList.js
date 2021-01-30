@@ -2,18 +2,37 @@ import React from "react"
 import MetaTags from 'react-meta-tags';
 // import ExpandMoreIcon from '@material-ui/icons/ExpandMore';
 import ShopBackground from "../../images/shop/shop-background.webp"
-import collectionWatch4 from "../../images/home/collection-watch-4.png"
-import collectionWatch5 from "../../images/home/collection-watch-5.png"
-import collectionWatch6 from "../../images/home/collection-watch-6.png"
 import { Col, Container, Row } from "react-bootstrap";
 import Filters from "./Filters";
-import { filters } from "../../data/filtersData";
 import CustomCard from "../commonComponent/watch/CustomCard";
 import _ from 'lodash';
+import { getAllProducts } from "./functions/getAllProducts";
+import { getFiltersData } from "./functions/getFiltersData";
 
 class ShopList extends React.Component {
+        constructor(props){
+            super(props)
+            this.state={
+                shoppingList:[],
+                filterData:[],
+            }
+        }
+    componentDidMount(){
+        getAllProducts(this.getShoppingListCallback)
+        getFiltersData(this.getFiltersListCallback)
+    }
+    getShoppingListCallback = (response) => {
+        if (response) {
+            this.setState({ shoppingList: response })
+        }
+    }
+    getFiltersListCallback=(response)=>{
+        if (response) {
+            this.setState({ filterData: response })
+        }
+    }
     render() {
-        let shoppingList=[collectionWatch4,collectionWatch5,collectionWatch6,collectionWatch5,collectionWatch4,collectionWatch6]
+        const { shoppingList, filterData } = this.state
         return (
             <div className="shop_list">
                 <MetaTags>
@@ -36,7 +55,7 @@ class ShopList extends React.Component {
                         <Row>
                             <Col md={3}>
                                 <div className="content_filter">
-                                    <Filters filterData={filters} />
+                                    <Filters filterData={filterData} />
                                 </div>
                             </Col>
                             <Col md={9}>
@@ -45,10 +64,10 @@ class ShopList extends React.Component {
                                     <div className="card_list clearfix">
                                         {_.map(shoppingList, (item) => (
                                             <CustomCard
-                                                imgPath={item}
-                                                title='Adriatica ADR'
+                                                imgPath={item?.image}
+                                                title={item?.title}
                                                 showCart
-                                                price={650.00}
+                                                price={item?.price}
                                             />
                                         ))
                                         }

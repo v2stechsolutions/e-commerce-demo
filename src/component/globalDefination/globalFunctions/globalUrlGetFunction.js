@@ -1,17 +1,13 @@
 import axios from 'axios';
 
-export const globalUrlGetFunction = async (data, callback) => {
-	await axios.get(data)
+export const globalUrlGetFunction = async (url, data, callback) => {
+	await axios.get(url,{
+		params:data
+	})
 		.then((res) => {
-			callback(res);
+			callback(data);
 		})
 		.catch((error) => {
-			console.log(
-				'status: ',
-				error.response.status,
-				' message: ',
-				error.response.data.message
-			);
-			callback(error.response);
+			callback(data);
 		});
 };

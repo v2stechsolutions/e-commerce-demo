@@ -1,20 +1,23 @@
-import React, { useState, useRef } from 'react'
+import React, { useState, useRef, useEffect } from 'react'
 import { Link } from "react-router-dom"
 import SimpleReactValidator from 'simple-react-validator';
 import useForceUpdate from 'use-force-update';
 import { PASSWORD_REGEX } from '../../constants/Regex';
+import { loginUser } from './functions/loginUser';
 
+export const UserContext = React.createContext();
 const Login = (props) => {
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
-
+    const [loginResponse, setLoginResponse] = useState({});
     const handleLoginIn = () => {
-        checkValidation()
-        let loginData = {
-            email: email,
-            password: password,
+        if (checkValidation()) {
+            let loginDetails = {
+                email: email,
+                password: password,
+            }
+            loginUser(loginDetails, loginCallbackFunction)
         }
-        console.log(loginData, "loginData")
     }
     const forceUpdate = useForceUpdate();
     const { current: validator } = useRef(new SimpleReactValidator({
@@ -37,8 +40,26 @@ const Login = (props) => {
             return false;
         }
     }
+    const loginCallbackFunction=(response)=>{
+        const { loginSuccess } = props
+        const { closeModal } = props
+        setLoginResponse(response)
+        if (response?.errorMsg) {
+            alert(response?.errorMsg)
+        } else {
+            let tocken=`Bearer ${response?.tocken}`
+            window.localStorage.setItem('access_token', tocken);
+            closeModal()
+            loginSuccess()
+        }
+    }
+    
+    useEffect(() => {
+        window.localStorage.setItem('access_token', '');
+    }, [])
 
     return (
+        <UserContext.Provider value={loginResponse}>
         <div id="login">
             <h1>Welcome Back!</h1>
             <form>
@@ -85,6 +106,7 @@ const Login = (props) => {
                     </button>
             </form>
         </div>
+        </UserContext.Provider>
     )
 }
 export default Login
